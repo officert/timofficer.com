@@ -15,8 +15,8 @@ const Terminal = styled.div`
   background: var(--white);
   border-radius: 0.5rem;
   border: 1px solid var(--gray-light);
-  width: 50vw;
-  height: 50vh;
+  width: 700px;
+  height: 400px;
 `
 
 const TerminalHeader = styled.div`
@@ -27,7 +27,7 @@ const TerminalHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 10px;
 `
 
 const TerminalLeft = styled.div`
@@ -35,13 +35,14 @@ const TerminalLeft = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 6px;
 `
 
 const TerminalBody = styled.pre`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 7.25rem auto 5rem;
-  grid-template-areas: "header header" "main sidebar" "footer footer";
+  grid-template-areas: 'header header' 'main sidebar' 'footer footer';
   min-height: 100vh;
 `
 
@@ -51,22 +52,36 @@ export default function Home() {
       <Terminal>
         <TerminalHeader>
           <TerminalLeft>
-            <Button round></Button>
+            <Button
+              round
+              style={{
+                height: '12px',
+                width: '12px',
+                border: 'none',
+                background: '#FF494A',
+              }}
+            ></Button>
+            <Button
+              round
+              style={{
+                height: '12px',
+                width: '12px',
+                border: 'none',
+                background: '#FFC219',
+              }}
+            ></Button>
+            <Button
+              round
+              style={{
+                height: '12px',
+                width: '12px',
+                border: 'none',
+                background: '#19B356',
+              }}
+            ></Button>
           </TerminalLeft>
         </TerminalHeader>
-        <TerminalBody>
-                       /\  \                 /\  \        /\__\     /\__\               /\__\        /\__\        /\  \    
-      ___   ___       |::\  \               /::\  \      /:/ _/_   /:/ _/_   ___       /:/  /       /:/ _/_      /::\  \   
-     /\__\ /\__\      |:|:\  \             /:/\:\  \    /:/ /\__\ /:/ /\__\ /\__\     /:/  /       /:/ /\__\    /:/\:\__\  
-    /:/  //:/__/    __|:|\:\  \           /:/  \:\  \  /:/ /:/  //:/ /:/  //:/__/    /:/  /  ___  /:/ /:/ _/_  /:/ /:/  /  
-   /:/__//::\  \   /::::|_\:\__\         /:/__/ \:\__\/:/_/:/  //:/_/:/  //::\  \   /:/__/  /\__\/:/_/:/ /\__\/:/_/:/__/___
-  /::\  \\/\:\  \__\:\~~\  \/__/         \:\  \ /:/  /\:\/:/  / \:\/:/  / \/\:\  \__\:\  \ /:/  /\:\/:/ /:/  /\:\/:::::/  /
- /:/\:\  \~~\:\/\__\\:\  \                \:\  /:/  /  \::/__/   \::/__/   ~~\:\/\__\\:\  /:/  /  \::/_/:/  /  \::/~~/~~~~ 
- \/__\:\  \  \::/  / \:\  \                \:\/:/  /    \:\  \    \:\  \      \::/  / \:\/:/  /    \:\/:/  /    \:\~~\     
-      \:\__\ /:/  /   \:\__\                \::/  /      \:\__\    \:\__\     /:/  /   \::/  /      \::/  /      \:\__\    
-       \/__/ \/__/     \/__/                 \/__/        \/__/     \/__/     \/__/     \/__/        \/__/        \/__/    
-
-        </TerminalBody>
+        <TerminalBody></TerminalBody>
       </Terminal>
     </Main>
   )
