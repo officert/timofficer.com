@@ -12,11 +12,16 @@ const Main = styled.main`
 `
 
 const Terminal = styled.div`
-  background: var(--white);
+  background: var(--black);
   border-radius: 0.5rem;
   border: 1px solid var(--gray-light);
+  box-shadow: 0px 0px 6px 1px rgba(58, 58, 58, 1);
   width: 700px;
   height: 400px;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `
 
 const TerminalHeader = styled.div`
@@ -43,7 +48,11 @@ const TerminalBody = styled.pre`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 7.25rem auto 5rem;
   grid-template-areas: 'header header' 'main sidebar' 'footer footer';
-  min-height: 100vh;
+  padding: 10px;
+  color: var(--white);
+  background: var(--black);
+  margin: 0;
+  font-family: 'Fira Code', monospace;
 `
 
 export default function Home() {
@@ -53,7 +62,7 @@ export default function Home() {
         <TerminalHeader>
           <TerminalLeft>
             <Button
-              round
+              round={true}
               style={{
                 height: '12px',
                 width: '12px',
@@ -62,7 +71,7 @@ export default function Home() {
               }}
             ></Button>
             <Button
-              round
+              round={true}
               style={{
                 height: '12px',
                 width: '12px',
@@ -71,7 +80,7 @@ export default function Home() {
               }}
             ></Button>
             <Button
-              round
+              round={true}
               style={{
                 height: '12px',
                 width: '12px',
@@ -81,7 +90,7 @@ export default function Home() {
             ></Button>
           </TerminalLeft>
         </TerminalHeader>
-        <TerminalBody></TerminalBody>
+        <TerminalBody>Hello world!!</TerminalBody>
       </Terminal>
     </Main>
   )
